@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.google.ar.core.examples.java.helloar"
+
+        // 24 is the minimum since ARCore only works with 24 and higher.
+        minSdkVersion 24
+        targetSdkVersion 27
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // ARCore library
+    implementation 'com.google.ar:core:1.1.0'
+
+    // Rajawali
+    implementation 'org.rajawali3d:rajawali:1.1.970@aar'
+
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support:design:27.1.0'
+}
